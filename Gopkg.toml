@@ -1,0 +1,23 @@
+# Gopkg.toml example
+#
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/golang/glog"
+
+[[constraint]]
+  branch = "master"
+  name = "k8s.io/apimachinery"
+
+[[constraint]]
+  name = "k8s.io/client-go"
+  version = "7.0.0"
+
+# Custom configured revision for client lib version
+[[override]]
+  name = "k8s.io/apimachinery"
+  revision = "302974c03f7e50f16561ba237db776ab93594ef6"
+
+[prune]
+  go-tests = true
+  unused-packages = true
