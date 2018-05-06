@@ -28,6 +28,13 @@ How program works
           kubectl config set-credentials employee --client-certificate=./someEmployee.crt  --client-key=./someEmployee.key
           kubectl config set-context some-employee-context --cluster=minikube --namespace=default --user=employee
           kubectl --context=some-employee-context get pods
-          
+    3.3 `kubectl --context=some-employee-context get pods`  **OK**
+    
+    3.4 `kubectl --context=some-employee-context get secrets` **FORBIDDEN**
             
-                  
+
+Restrictions
+=====
+1. program cant work without kubernetes config
+2. program creates only one POC role and roleBinding to show that program itself works, Role verbs selected just for demonstration
+3. everything happensin `default` namespace                   
