@@ -38,10 +38,15 @@ func main() {
 		return
 	}
 
+	// show roleBindings already existed
 	printRoleBinding(client)
+
+	// add role and rolebinding
 	role := createDeploymentRole()
 	createRoleOnKub(client, role)
 	bindRole(client, role, "someEmployee")
+
+	// show roleBindings again to check that it was added
 	printRoleBinding(client)
 
 
